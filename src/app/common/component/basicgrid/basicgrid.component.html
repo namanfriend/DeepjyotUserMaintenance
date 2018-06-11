@@ -1,0 +1,34 @@
+<div style="float: right;">
+	<span><a (click)="displayPageClick('first');"><< First</a></span>
+	<span><a (click)="displayPageClick('previous');">< Previous</a></span>
+	<span>{{pagination.startIndex}} to {{pagination.endIndex}} of {{pagination.totalRecord}}</span>
+	<span><a (click)="displayPageClick('next');">Next > </a></span>
+	<span><a (click)="displayPageClick('last');">Last >></a></span>
+	<span><select [(ngModel)]="pagination.pageSize" style="height: 25px;" (change)="displayPageClick('first');">
+			  <option value="10">10 per page</option>
+			  <option value="20">20 per page</option>
+			  <option value="50">50 per page</option>
+			  <option value="100">100 per page</option>
+			</select>
+	</span>
+</div>
+<div>
+	<table class="ud-table" width="100%" style='border: 1px solid lightgrey;'>
+		<thead>
+			<tr>		
+				<th class="tableHeader" (click)="sortingUpdated(columnHeader.dataRef);" *ngFor="let columnHeader of config.header; let i = index" [width]="columnHeader.widthPX" style='border: 1px solid lightgrey;'>
+					{{columnHeader.label}}
+					<span *ngIf="sortByColumnHeader === columnHeader.dataRef && sortDirection === -1"><b>&darr;</b></span>
+					<span *ngIf="sortByColumnHeader === columnHeader.dataRef && sortDirection === 1"><b>&uarr;</b></span>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let dataRow of dataDisplay; let i = index">
+				<td class="tableCell" *ngFor="let columnHeader of config.header; let i = index" [width]="columnHeader.widthPX" style='border: 1px solid lightgrey;'>
+					<app-defaultcolumn [data]="dataRow" [header]="columnHeader" (rowAction)="rowActionPerformed($event);"></app-defaultcolumn>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

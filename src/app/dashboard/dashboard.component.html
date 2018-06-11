@@ -1,0 +1,6 @@
+<div>
+	<app-searchcriteria [initData]="initData" [searchCriteria]="searchCriteria" (viewChanged)="viewChangedEvent($event);" (searchAction)="searchActionPerfermed($event);"></app-searchcriteria>
+</div>
+<div class="comp-spacing">
+	<app-grid  (viewChanged)="viewChangedEvent($event);" [dataSubject]="dataSubject"></app-grid>
+</div>

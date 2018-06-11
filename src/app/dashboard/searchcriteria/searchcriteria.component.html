@@ -1,0 +1,48 @@
+<div style="margin: 10px;">
+	<table style="width: 100%;" cellPadding="10">
+		<tr>
+			<td width="10%" *ngIf="initData?.VIEWS">
+				<div>
+					<label classfor="sub-view">View</label>
+				</div>
+				<div>
+					<select [(ngModel)]="searchCriteria.view">
+						  <option *ngFor="let view of initData.VIEWS;" [value]="view.code">{{view.desc}}</option>
+					</select>
+				</div>
+			</td>
+			<td width="7%">
+				<div>
+					<label classfor="sub-id">Sub No.</label>
+				</div>
+				<div>
+		       		<input id="sub-id"  type="text" [(ngModel)]="searchCriteria.subscriptionId">
+				</div>
+			</td>
+			<td width="12%">
+				<label for="first-name">Full Name</label>
+		        <input id="first-name"  type="text" [(ngModel)]="searchCriteria.fullName">
+			</td>
+			<td width="10%">
+				<label for="city">City</label>
+		            		<input id="city"  type="text" [(ngModel)]="searchCriteria.city">
+			</td>
+			<td width="10%">
+				<label for="pincode">Pincode</label>
+		            		<input id="pincode"  type="text" [(ngModel)]="searchCriteria.pincode">
+			</td>
+			<td width="15%">
+				<label for="pincode">Expiry Date Range</label>
+           		<my-date-range-picker [options]="myDateRangePickerOptions" (dateSelected)="dateRangeUpdated($event);"></my-date-range-picker>
+			</td>
+			<td>
+				<div style="margin-top: 19px;">
+					<button type="submit" (click)="searchActionPerformed();">Search</button>
+					<button type="submit" (click)="createNewSubscription();">Create Subscription</button>
+					<button type="submit" (click)="printSticker();">Print Sticker</button>
+				</div>
+			</td>			
+				
+		</tr>
+	</table>
+</div>

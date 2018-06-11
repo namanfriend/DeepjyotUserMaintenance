@@ -1,0 +1,6 @@
+<div *ngIf="header?.editConfig?.fieldType==='dynamic'" [innerHTML]='displayValue'></div>
+<div *ngIf="!header?.editConfig"> {{displayValue}}</div>
+<a *ngIf="header?.editConfig?.fieldType==='rowEvent'" (click)='rowActionPerformed(header?.editConfig?.otherConfig)'>{{displayValue}}</a>
+<div *ngIf="header?.editConfig?.fieldType==='extendColumn'">
+	<app-extendcolumn [data]="data" [header]="header" (rowAction)='rowActionPerformed(header?.editConfig?.otherConfig);'></app-extendcolumn>
+</div>

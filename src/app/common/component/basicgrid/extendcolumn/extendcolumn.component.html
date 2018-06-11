@@ -1,0 +1,55 @@
+<div> {{displayValue}}</div>
+<div style="padding-top: 11px;">
+	<a (click)="showModel=true;"><u>Extend</u></a>
+</div>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal" *ngIf="showModel">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div>
+	    <span class="close" (click)="showModel=false;">&times;</span>
+	    <p style="font-size: 14px; font-weight: bold;">Extend current subscription</p>
+    </div>
+    <div>
+	    <table>
+			<tbody>
+				<tr style="padding-bottom: 11px;">
+					<td><span for="sub-no">Subscription No:</span></td>
+					<td width="351px;">{{data.subscriptionId}}</td>
+				</tr>
+				<tr style="padding-bottom: 11px;">
+					<td><span for="full-name">Full Name:</span></td>
+					<td width="351px;">{{data.fullName}}</td>
+				</tr>
+				<tr style="padding-bottom: 11px;">
+					<td style="vertical-align: top;"><span for="add-line1">Address:</span></td>
+					<td><div [innerHTML]="data.displayAddress"></div></td>
+				</tr>
+				<tr style="padding-bottom: 11px;">
+					<td><span>Expiry Date:</span></td>
+					<td>{{data.subEndDate}}</td>
+				</tr>
+				<tr style="padding-bottom: 11px;">
+					<td><span>Tenure to extend:</span></td>
+					<td><select [(ngModel)]="tenure">
+						  <option value="10_YR">10 Years (400 Rupees)</option>
+						  <option value="5_YR">5 Years (200 Rupees)</option>
+						  <option value="1_YR">1 Year (40 Rupees)</option>
+						</select>
+					</td>
+				</tr>				 				
+				<tr style="padding-bottom: 11px;">
+					<td colspan="2">
+						<div style="padding-top: 11px;float: right;">
+							<button (click)="showModel=false;">Cancel</button>
+							<button style="margin-left: 11px;" (click)="rowActionPerformed(header?.editConfig?.otherConfig);showModel=false;">Extend</button>
+						</div>						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+    </div>    
+  </div>
+</div>
