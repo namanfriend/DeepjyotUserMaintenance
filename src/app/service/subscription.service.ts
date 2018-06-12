@@ -5,14 +5,14 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class SubscriptionService {
-  URL_SUBSCRIPTION_LIST = 'http://localhost:8080/DipJyotWebModule/rest/dipjyot/getList';
-  URL_SUBSCRIPTION_DETAILS = 'http://localhost:8080/DipJyotWebModule/rest/dipjyot/subscriptionDetails';
-  URL_SUBSCRIPTION_UPDATE = 'http://localhost:8080/DipJyotWebModule/rest/dipjyot/updateSubscription';
-  URL_SUBSCRIPTION_CREATE = 'http://localhost:8080/DipJyotWebModule/rest/dipjyot/createSubscription';
-  URL_SUBSCRIPTION_EXTEND = 'http://localhost:8080/DipJyotWebModule/rest/dipjyot/extendSubscription';
-  URL_SUBSCRIPTION_INIT = 'http://localhost:8080/DipJyotWebModule/rest/dipjyot/initService';
-  URL_SUBSCRIPTION_PRINT_STICKER = 'http://localhost:8080/DipJyotWebModule/rest/dipjyot/printSticker';
-  URL_SUBSCRIPTION_DOWNLOAD_FILE = 'http://localhost:8080/DipJyotWebModule/servlet/DownloadServlet';
+  URL_SUBSCRIPTION_LIST = 'http://localhost:8080/DeepjyotWebModule/rest/dipjyot/getList';
+  URL_SUBSCRIPTION_DETAILS = 'http://localhost:8080/DeepjyotWebModule/rest/dipjyot/subscriptionDetails';
+  URL_SUBSCRIPTION_UPDATE = 'http://localhost:8080/DeepjyotWebModule/rest/dipjyot/updateSubscription';
+  URL_SUBSCRIPTION_CREATE = 'http://localhost:8080/DeepjyotWebModule/rest/dipjyot/createSubscription';
+  URL_SUBSCRIPTION_EXTEND = 'http://localhost:8080/DeepjyotWebModule/rest/dipjyot/extendSubscription';
+  URL_SUBSCRIPTION_INIT = 'http://localhost:8080/DeepjyotWebModule/rest/dipjyot/initService';
+  URL_SUBSCRIPTION_PRINT_STICKER = 'http://localhost:8080/DeepjyotWebModule/rest/dipjyot/printSticker';
+  URL_SUBSCRIPTION_DOWNLOAD_FILE = 'http://localhost:8080/DeepjyotWebModule/servlet/DownloadServlet';
   constructor(private http: Http) { }
 
   printSticker(searchCriteria: any, successFunction) {
